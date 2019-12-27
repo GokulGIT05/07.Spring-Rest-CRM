@@ -6,6 +6,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
+
+
 
 @Entity
 @Table(name="customer")
@@ -17,6 +20,7 @@ public class Customer {
 	private int id;
 	
 	@Column(name="first_name")
+	@NotEmpty(message = "Please provide a name")
 	private String firstName;
 	
 	@Column(name="last_name")
